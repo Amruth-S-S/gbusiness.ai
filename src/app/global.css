@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("../css/embla.css");
+@import url("../css/sandbox.css");
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("/fonts/CenturyGothic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: "Century Gothic", sans-serif;
+
+  /* ✅ Use RGB triplet (space-separated) for RGB-based vars */
+  --foreground-rgb: 17 42 70;
+  --background-start-rgb: 42 1 63; /* converted from #2a013f */
+  --background-end-rgb: 255 255 255;
+
+  /* ✅ HSL space-separated for opacity utilities */
+  --background: 0 0% 100%; /* white */
+  --input: 210 7% 85%; /* #d8dadc → approx HSL */
+  --primary: 233 49% 40%; /* #313b96 */
+  --secondary: 233 70% 97%; /* #F4F6FE */
+  --accent: 240 4.8% 95.9%; /* #4A57F0 */
+  --primary-foreground: 0 0% 100%; /* white */
+
+  --accent-foreground: 240 5.9% 10%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+
+  /* Optional: destructive if uncommented */
+  /* --destructive: 0 72.2% 50.6%;
+  --destructive-foreground: 0 0% 98%; */
+
+  --border: 240 5.9% 90%;
+  --ring: 240 5% 64.9%;
+
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-end-rgb: 240 243 251;
+    /* Add any other overrides here */
+  }
+}
+
+html {
+  min-height: 100%;
+  overflow-y: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: "Century Gothic", sans-serif;
+  /* min-height: 100vh;
+  height: 100vh; */
+}
+
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 90.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
