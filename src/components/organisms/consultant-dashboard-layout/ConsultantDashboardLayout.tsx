@@ -114,8 +114,9 @@ export function ConsultantDashboardLayout({
               {children}
             </div>
           </div>
-          {/* CenterModal outside flex row so it overlays properly */}
+    
           <CenterModal
+          
             contentClassName={cn(
               (contentName === "VIEW__PROMPTS_RESULT" ||
                 contentName === "FORM__PROMPT" ||
@@ -146,6 +147,7 @@ export function ConsultantDashboardLayout({
                 "flex justify-center items-center",
             )}
           >
+                  {/* CenterModal outside flex row so it overlays properly */}
             <div className="w-full max-w-full overflow-x-hidden">
               {contentName === "VIEW__SETTINGS" && <SettingsView />}
               {contentName === "FORM__BOARD" && <DynamicCreateBoardForm />}
